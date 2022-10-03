@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/longest-string-chain/
+
 class Solution {
 public:
     int longestStrChain(vector<string>& words) {
