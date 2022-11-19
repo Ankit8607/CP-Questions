@@ -8,7 +8,6 @@ const int mod= 10000007;
 #define ii pair<int,int>
 #define all(a) a.begin(),a.end()
 #define IOS ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
-#define tracearray(arr,n)  cout<<#arr<<endl;for(int i=0;i<n;i++)cout<<arr[i]<<" ";cout<<endl;
 
 void solve(){
     int m,sum; cin>>m>>sum;
