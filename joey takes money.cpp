@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+#define int long long
 const int mod= 10000007;
 #define endl "\n"
 #define F first
@@ -12,24 +13,12 @@ const int mod= 10000007;
 
 void solve(){
     int n; cin>>n;
-    int arr[n+1];
-    int t=200000;
-    vector<int>v;
-    for(int i=0;i*i<=t;i++) v.push_back(i*i);
-    arr[0]=0;
-    for(int i=1;i<=n;i++){ 
-        cin>>arr[i];
-        arr[i]^=arr[i-1];
+    int ans=1;
+    for(int i=0;i<n;i++){
+        int a; cin>>a;
+        ans*=a;
     }
-    unordered_map<int,int>mp;
-    mp[0]=1;
-    mp[arr[1]]=1;
-    int ans=0;
-    for(int i=2;i<=n;i++){ 
-        for(auto &j:v) ans+=mp[arr[i]^j];
-    }
-    ans=(n+1)*n/2-ans;
-    cout<<ans<<endl;
+    cout<<(n-1+ans)*2022<<endl;
 }
 
 signed main(){

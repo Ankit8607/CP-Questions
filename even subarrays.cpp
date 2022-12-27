@@ -23,10 +23,10 @@ void solve(){
     }
     unordered_map<int,int>mp;
     mp[0]=1;
-    mp[arr[1]]=1;
     int ans=0;
-    for(int i=2;i<=n;i++){ 
+    for(int i=1;i<=n;i++){ 
         for(auto &j:v) ans+=mp[arr[i]^j];
+        mp[arr[i]]++;
     }
     ans=(n+1)*n/2-ans;
     cout<<ans<<endl;
