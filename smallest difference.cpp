@@ -39,7 +39,7 @@ void solve(){
         for(int i=0;i<n;i++){
             ans[i][0]=arr[lans++];
         }
-        for(int j=1;j<m;j++){
+        for(int j=1;j<m;j++) {
             ans[n-1][j]=arr[lans++];
         }
         int par=0;
