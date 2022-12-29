@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 const int mod= 10000007;
-#define endl "\n"
+#define endl  "\n"
 #define F first
 #define S second
 #define vi vector<int>
