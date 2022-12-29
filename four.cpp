@@ -8,7 +8,8 @@ const int mod= 10000007;
 #define ii pair<int,int>
 #define all(a) a.begin(),a.end()
 #define IOS ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
-#define tracearray(arr,n)  cout<<#arr<<endl;for(int i=0;i<n;i++)cout<<arr[i]<<" ";cout<<endl;
+#define printarray(arr,n)  cout<<#arr<<endl;for(int i=0;i<n;i++)cout<<arr[i]<<" ";cout<<endl;
+#define print(x) cout<<#x<<" = "<<x<<endl;
 
 void solve(){
     int n,m; cin>>n>>m;
@@ -27,11 +28,13 @@ void solve(){
         }
         l++; r++;
     }
+    // print(lans); print(rans);
     vector<int>rem;
     for(int i=0;i<lans;i++) rem.push_back(arr[i]);
     for(int i=rans+1;i<n*m;i++) rem.push_back(arr[i]);
+    int ans[n][m];
+    memset(ans,0,sizeof(ans));
     l=0;r=rem.size()-1;
-    int ans[n][m]={0};
     if(n<=m){
         for(int i=0;i<n;i++){
             ans[i][0]=arr[lans++];
@@ -45,6 +48,10 @@ void solve(){
             else ans[i][1]=rem[r--];
             par=1-par;
         }
+    //     for(int i=0;i<n;i++){
+    //     for(int j=0;j<m;j++) cout<<ans[i][j]<<" ";
+    //     cout<<endl;
+    // }
         for(int i=0;i<n;i++){
             for(int j=0;j<m;j++){
                 if(ans[i][j]==0) ans[i][j]=rem[l++];
@@ -60,8 +67,8 @@ void solve(){
         }
         int par=0;
         for(int i=0;i<m-1;i++){
-            if(par==0) ans[0][i]=rem[l++];
-            else ans[0][i]=rem[r--];
+            if(par==0) ans[1][i]=rem[l++];
+            else ans[1][i]=rem[r--];
             par=1-par;
         }
         for(int i=0;i<n;i++){
