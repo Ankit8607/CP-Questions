@@ -11,7 +11,16 @@ const int mod= 10000007;
 #define tracearray(arr,n)  cout<<#arr<<endl;for(int i=0;i<n;i++)cout<<arr[i]<<" ";cout<<endl;
 
 void solve(){
-    
+    int n,k;
+    cin>>n>>k;
+    int i=n,j=1;
+    while(n>0){
+        cout<<i--<<" ";
+        n--;
+        if(n>0) cout<<j++<<" ";
+        n--;
+    }
+    cout<<endl;
 }
 
 signed main(){
