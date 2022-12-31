@@ -4,7 +4,6 @@ const int mod= 10000007;
 #define endl "\n"
 #define F first
 #define S second
-#define int long long
 #define vi vector<int>
 #define ii pair<int,int>
 #define all(a) a.begin(),a.end()
@@ -13,24 +12,24 @@ const int mod= 10000007;
 
 void solve(){
     int n; cin>>n;
-    int arr[n];
-    int cnt1=0,cnt2=0;
-    for(int i=0;i<n;i++){ 
+    int arr[n+1];
+    int t=2*n+1;
+    vector<int>v;
+    for(int i=0;i*i<=t;i++) v.push_back(i*i);
+    arr[0]=0;
+    for(int i=1;i<=n;i++){ 
         cin>>arr[i];
-        if(arr[i]%2) cnt1++;
-        else cnt2++;
+        arr[i]^=arr[i-1];
     }
-    sort(arr,arr+n);
-    if(cnt1>1 and cnt2>1) cout<<"NO"<<endl;
-    else{
-        for(int i=1;i<n;i++){
-            if(arr[i]==arr[i-1]){
-                cout<<"NO"<<endl;
-                return;
-            }
-        }
-        cout<<"YES"<<endl;
+    int mp[4*n+1]={0};
+    mp[0]=1;
+    long long ans=0;
+    for(int i=1;i<=n;i++){ 
+        for(auto &j:v) ans+=mp[arr[i]^j];
+        mp[arr[i]]++;
     }
+    ans=1LL*(n+1)*n/2-ans;
+    cout<<ans<<endl;
 }
 
 signed main(){
