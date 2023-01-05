@@ -11,25 +11,14 @@ const int mod= 10000007;
 #define tracearray(arr,n)  cout<<#arr<<endl;for(int i=0;i<n;i++)cout<<arr[i]<<" ";cout<<endl;
 
 void solve(){
-    int n,k,sum; cin>>n>>k>>sum;
-    vector<int>ans;
-    while(n--){
-        if((sum%k)==0) ans.push_back(0);
-        else if(((sum-1)%k)==0) sum-=1,ans.push_back(1);
-        else if(((sum+1)%k)==0) sum+=1,ans.push_back(-1);
-        else{
-            cout<<-2<<endl;
+    int n; cin>>n;
+    for(int i=2;i*i<=n;i++){
+        if(n%i==0){
+            cout<<i<<" "<<n/i<<" "<<2*n<<endl;
             return;
         }
-        sum/=k;
     }
-    
-    if(sum){
-        cout<<-2<<endl;
-        return;
-    }
-    for(auto &i:ans) cout<<i<<" ";
-    cout<<endl;
+    cout<<-1<<endl;
 }
 
 signed main(){
