@@ -1,3 +1,5 @@
+// https://codeforces.com/contest/1850/problem/A
+
 #include<bits/stdc++.h>
 using namespace std;
 const int mod= 10000007;
