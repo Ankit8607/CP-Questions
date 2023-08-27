@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/minimum-operations-to-form-subsequence-with-target-sum/description/
 
 class Solution
-{
+{ 
 public:
    bool isPossible(int target, multiset<int> &st)
    {
