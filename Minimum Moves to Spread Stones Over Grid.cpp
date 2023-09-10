@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/minimum-moves-to-spread-stones-over-grid/description/
 
-class Solution {
-private:
+class Solution  {
+private: 
     vector<vector<int>> xtra, zero;
     int ret;
     void solve(int i, int count) {
