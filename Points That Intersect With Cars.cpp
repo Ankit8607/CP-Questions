@@ -2,7 +2,7 @@
 
 class Solution {
 public:
-    int numberOfPoints(vector<vector<int>>& nums) {
+    int numberOfPoints(vector<vector<int>>& nums)  {
         vector<int>arr(101,0);
         for(auto i:nums){
             for(int j=i[0];j<=i[1];j++) arr[j]=1;
