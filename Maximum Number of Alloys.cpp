@@ -3,7 +3,7 @@
 class Solution {
 private:
     bool isPossible(int n, int k, int budget, vector<vector<int>> &composition, vector<int> &stock, 
-                    vector<int> &costs, int fixed_alloy) {
+                    vector<int> &costs, int fixed_alloy){
         
         for (int i = 0; i < k; i++) {
             long long calBudget = 0;
