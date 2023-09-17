@@ -2,7 +2,7 @@
 
 class Solution {
 public:
-        long long maximumSum(vector<int>& A) {
+        long long maximumSum(vector<int>& A){
         unordered_map<int, long long> count;
         long long res = 0, x, v;
         for (int i = 0; i < A.size(); i++) {
