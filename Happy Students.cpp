@@ -2,7 +2,7 @@
 
 class Solution {
 public:
-    int countWays(vector<int>& nums) {
+    int countWays(vector<int>& nums){
         sort(nums.begin(),nums.end());
         int ans=0,n=nums.size();
         if(nums[0]!=0) ans=1;
